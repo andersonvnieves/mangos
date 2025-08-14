@@ -26,6 +26,6 @@ jobs:
       - name: Deploy CloudFormation Stack
         uses: aws-actions/aws-cloudformation-github-action@v1
         with:
-          stack-name: my-stack
-          template: infrastructure/cloudformation.yml
+          stack-name: mangos-frontend-stack
+          template: infrastructure/templates/frontend-stack.yml
           capabilities: CAPABILITY_IAM

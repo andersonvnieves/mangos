@@ -2,7 +2,7 @@
 
 
 aws cloudformation deploy \
-  --template-file /Users/anderson/Repos/mangos/infrastructure/templates/frontend-stack.yaml \
+  --template-file ./infrastructure/templates/frontend-stack.yaml \
   --stack-name mangos-frontend-stack \
   --parameter-overrides Environment=dev \
   --region sa-east-1
