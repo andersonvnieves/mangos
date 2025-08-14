@@ -1,0 +1,31 @@
+name: Infrastructure Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'infrastructure/**'
+      - '.github/workflows/infrastructure-pipeline.yaml'
+    
+jobs:
+  deploy-resources:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+    
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Deploy CloudFormation Stack
+        uses: aws-actions/aws-cloudformation-github-action@v1
+        with:
+          stack-name: my-stack
+          template: infrastructure/cloudformation.yml
+          capabilities: CAPABILITY_IAM
