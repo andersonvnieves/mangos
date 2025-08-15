@@ -24,8 +24,10 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Deploy CloudFormation Stack
-        uses: aws-actions/aws-cloudformation-github-action@v1
-        with:
-          stack-name: mangos-frontend-stack
-          template: infrastructure/templates/frontend-stack.yml
-          capabilities: CAPABILITY_IAM
+        run: |
+          aws cloudformation deploy \
+          --template-file ./infrastructure/templates/frontend-stack.yaml \
+          --stack-name mangos-frontend-stack \
+          --parameter-overrides Environment=dev \
+          --region ${{ vars.AWS_REGION }} \
+          --no-fail-on-empty-changeset
