@@ -46,8 +46,11 @@ Resources:
             QueryString: false
         DefaultRootObject: index.html
         HttpVersion: http2
+        Aliases:
+          - "mangos.avn.dev.br"
         ViewerCertificate:
-          CloudFrontDefaultCertificate: true        
+          AcmCertificateArn: "arn:aws:acm:us-east-1:230287251097:certificate/cafc6a42-5846-46e9-ab9a-187c9a6a0ed6"
+          SslSupportMethod: sni-only  
 Outputs:
   S3StaticWebsiteURL:
     Description: "URL of the S3 static website"
