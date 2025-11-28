@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import { Button } from "broto-ui-react"
+=======
+import { MkButton } from 'moldekit-react';
+>>>>>>> Stashed changes
 
 function App() {
 
@@ -6,7 +10,15 @@ function App() {
     <section className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="font-bold text-center text-4xl">mangos</h1>
       <h2 className="text-center text-2xl">under construction !</h2>
+<<<<<<< Updated upstream
       <Button primary={true} label="Click me" onClick={() => alert("Button clicked!")}></Button>
+=======
+
+        <MkButton iconName="home" variant="filled" color="primary" onClick={() => alert('clicked')}>
+          Click Me!
+        </MkButton>
+
+>>>>>>> Stashed changes
     </section>
   )
 }
