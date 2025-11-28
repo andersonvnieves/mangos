@@ -11,12 +11,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
-<<<<<<< Updated upstream
-    "broto-ui-react": "^0.0.13",
-=======
-    "lucide-react": "^0.555.0",
-    "moldekit-react": "^0.0.2",
->>>>>>> Stashed changes
+    "lucide-react": "^0.543.0",
+    "moldekit-react": "^0.0.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.12"
