@@ -7,7 +7,7 @@ function App() {
       <h1 className="font-bold text-center text-4xl">mangos</h1>
       <h2 className="text-center text-2xl">under construction !</h2>
 
-        <MkButton iconName="home" variant="filled" color="primary" iconName="home" onClick={() => alert('clicked')}>
+        <MkButton iconName="home" variant="filled" color="primary" onClick={() => alert('clicked')}>
           Home
         </MkButton>
 
